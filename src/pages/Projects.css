@@ -1,0 +1,115 @@
+/* Filter */
+.projects-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.projects-filter__btn {
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+
+.projects-filter__btn:hover {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.projects-filter__btn--active {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+/* Meta */
+.projects-meta {
+  margin-bottom: 32px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.projects-count {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.projects-count strong {
+  color: var(--color-primary);
+}
+
+/* Gallery grid */
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projects-empty {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+/* Stats banner */
+.projects-stats {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 60px 0;
+}
+
+.projects-stats__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.projects-stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-right: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.projects-stats__item:last-child { border-right: none; }
+
+.projects-stats__value {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.projects-stats__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-gallery { grid-template-columns: repeat(2, 1fr); }
+  .projects-stats__inner { grid-template-columns: repeat(2, 1fr); }
+  .projects-stats__item:nth-child(2) { border-right: none; }
+  .projects-stats__item:nth-child(3) { border-right: 1px solid var(--color-border); }
+}
+
+@media (max-width: 600px) {
+  .projects-gallery { grid-template-columns: 1fr; }
+  .projects-stats__inner { grid-template-columns: repeat(2, 1fr); }
+}
